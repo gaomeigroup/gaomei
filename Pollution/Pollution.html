@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            text-align: justify;
+        }
+
+        body {
+            background-color: #807872;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* 以下slider */
+        html,
+        body {
+            position: relative;
+            height: 100%;
+        }
+
+        body {
+            background: #eee;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            font-size: 18px;
+            background: #fff;
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+
+        /* 以上slider */
+        .container {
+            max-width: 1500px;
+        }
+
+        .change {
+            position: relative;
+            padding: 0;
+        }
+
+        .change_contant {
+            display: flex;
+            flex-direction: row;
+            margin: 0;
+            /* background-color: #b7a89d; */
+            background-image: linear-gradient(to bottom, #c8bab1, #807872);
+
+
+        }
+
+        .change_title {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            flex-basis: 50px;
+
+        }
+
+        .change_title_contant {
+            align-self: center;
+            padding: 0;
+        }
+
+        @media (max-width:768px) {
+            .change_title_contant {
+                color: white;
+            }
+        }
+
+
+        .change_left {
+            height: 100vh;
+            width: 50%;
+            padding: 0;
+        }
+
+        .change_right {
+            height: 100vh;
+            background-image: url(pic/7DaSW.jpg);
+            background-position: center;
+            background-size: cover;
+            width: 50%;
+            padding: 0;
+        }
+
+
+        .nav_bar {
+            position: absolute;
+            padding: 0;
+            z-index: 200;
+            top: 0;
+
+        }
+
+        .nav-item {
+            margin-right: 55px;
+        }
+
+        .navbar {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .nav_container {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+
+
+        h1 {
+            font-size: 50px;
+            font-family: 微軟正黑體;
+        }
+
+        h2 {
+            font-size: 24px;
+            font-family: 微軟正黑體;
+        }
+
+        h3 {
+            font-size: 16px;
+            font-family: 微軟正黑體;
+            letter-spacing: 1.5px;
+            line-height: 1.5;
+        }
+
+        .year {
+            font-family: Arial;
+            font-weight: bolder;
+        }
+
+        .crisis_title_contant {
+            height: 19vh;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+        }
+
+        .crisis_title {
+            padding-top: 4.5vh;
+            padding-bottom: 4.5vh;
+            background-color: darkred;
+        }
+
+        .timeline {
+            height: 30vh;
+
+        }
+
+        .crisis {
+            background-color: rgb(26,26,26);
+        }
+
+        .crisis_pic1 {
+            background-image: url(pic/crisis_pic1-1.jpg);
+            background-position: center;
+            background-size: cover;
+            min-height: 25vh;
+        }
+
+        .crisis_pic2 {
+            background-image: url(pic/crisis_pic2-1.jpg);
+            background-position: center;
+            background-size: cover;
+            min-height: 25vh;
+        }
+
+        .crisis_pic3 {
+            background-image: url(pic/crisis_pic3-2.jpg);
+            background-position: center;
+            background-size: cover;
+            min-height: 25vh;
+        }
+
+        .crisis_pic4 {
+            background-image: url(pic/crisis_pic4-1.jpg);
+            background-position: left;
+            background-size: cover;
+            min-height: 25vh;
+        }
+
+        .crisis_pic5 {
+            background-image: url(pic/crisis_pic5-1.jpg);
+            background-position: center;
+            background-size: cover;
+            min-height: 25vh;
+        }
+
+        @media (max-width:321px) {
+            .timeline {
+                height: 50vh;
+            }
+        }
+
+
+
+        .crisis_text2,
+        .crisis_text4,
+        .crisis_text1,
+        .crisis_text3,
+        .crisis_text5 {
+            display: flex;
+            justify-content: center;
+            align-items: center
+        }
+
+        .crisis p,
+        .crisis span {
+            color: #eee;
+        }
+
+        .overload {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            background-image: url(pic/overload_bac-1.jpg);
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+            overflow: hidden;
+        }
+
+        .overload_title {
+            padding-top: 4.5vh;
+            padding-bottom: 4vh;
+            background-color: darkred;
+            color: #eee;
+        }
+
+        .overload_title_contant {
+            height: 19vh;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            padding: 0;
+        }
+
+        .overload_top {
+            height: 60vh;
+        }
+
+        .overload_top_img {
+            height: 60vh;
+            background-image: url(pic/overload_top_img.jpg);
+            background-position: center;
+            background-size: cover;
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        @media (max-width:768px) {
+            .overload_top_img {
+                height: 30vh;
+            }
+
+            .overload_top {
+                max-height: 100vh;
+            }
+        }
+
+        .overload_top_text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            align-self: center;
+            padding-top: 2%;
+            padding-bottom: 35%;
+            padding-left: 5%;
+            padding-right: 0;
+            margin-left: 0;
+
+        }
+
+
+        .overload_btm {
+            height: 60vh;
+
+        }
+
+        .overload_btm_img {
+            height: 60vh;
+            background-image: url(pic/overload_btm_img.jpg);
+            background-position: center;
+            background-size: cover;
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        @media (max-width:768px) {
+            .overload_btm_img {
+                height: 30vh;
+            }
+
+            .overload_btm {
+                max-height: 100vh;
+            }
+        }
+
+        .overload_btm_text {
+
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            align-self: center;
+            padding-top: 2%;
+            padding-bottom: 35%;
+            padding-left: 0;
+            padding-right: 5%;
+            /* margin-right: 3%; */
+
+        }
+
+        @media (max-width:768px) {
+            .overload_btm_text {
+                padding-left: 5%;
+            }
+
+            .overload_top_text {
+                padding-right: 5%;
+            }
+        }
+
+        .overload_top_blank,
+        .overload_btm_blank {
+            height: 15vh;
+            padding: 0;
+            margin: 0;
+
+        }
+
+        .overload_btm_blank {
+            background-color: #807872;
+        }
+
+        @media (max-width:768px) {
+
+            .overload_top_blank,
+            .overload_btm_blank {
+                height: 30vh;
+            }
+        }
+
+        .overload_btm_gap,
+        .overload_top_gap {
+            padding: 0;
+
+        }
+
+        .pollution {
+            background-color: rgb(42, 41, 41);
+            overflow: hidden;
+        }
+
+        .pollution_title {
+            display: flex;
+            justify-content: center;
+            padding-top: 13vh;
+            padding-bottom: 13vh;
+            background-color: darkred;
+        }
+
+        .pollution_title h1 {
+            align-self: center;
+            margin-bottom: 0;
+            color: #eee;
+        }
+
+        .pollution_img1,
+        .pollution_img2 {
+            height: 100vh;
+
+        }
+
+        .pollution_img1 {
+            background-image: url(pic/5ab1.jpg);
+            background-position: center;
+            background-size: cover;
+
+        }
+
+        .pollution_img2 {
+            background-image: url(pic/7DaSW.jpg);
+            background-position: center;
+            background-size: cover;
+        }
+
+
+
+        .show_box {
+            background-color: rgba(0, 0, 0, .5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 152px;
+            height: 56px;
+            border-radius: 28px;
+        }
+
+
+        .pollution_img1_textbox p,
+        .pollution_img2_textbox p {
+            color: #eee;
+
+        }
+
+        .pollution_blank {
+            height: 9vh;
+        }
+
+        /* .pollution_blank_gap {
+            height: 2vh;
+        } */
+
+        .pollution_banner_top {
+            background-image: url(pic/pollution_banner_top.jpg);
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            box-shadow: inset 0px -50px 50px -10px rgba(20%, 20%, 40%, .5), inset 0px 50px 50px -10px rgba(20%, 20%, 40%, .5);
+        }
+
+        .pollution_banner_mid {
+            background-image: url(pic/pollution_banner_mid.png);
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            box-shadow: inset 0px -50px 50px -10px rgba(102, 34, 22, 0.5), inset 0px 50px 50px -10px rgba(102, 34, 22, 0.5);
+
+        }
+
+        .pollution_banner_btm {
+            background-image: url(pic/pollution_banner_btm.jpg);
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            box-shadow: inset 0px -50px 50px -10px rgba(3, 3, 3, 0.5), inset 0px 50px 50px -10px rgba(3, 3, 3, 0.5);
+        }
+
+        .pollution_banner_top,
+        .pollution_banner_mid,
+        .pollution_banner_btm {
+            display: flex;
+            height: 50vh;
+            justify-content: center;
+            align-items: center;
+
+
+        }
+
+
+        .pollution_banner_top p,
+        .pollution_banner_mid p,
+        .pollution_banner_btm p {
+            margin-bottom: 0;
+            color: white;
+        }
+
+        .exotic {
+            overflow: hidden;
+        }
+
+        .exotic_bacc {
+            background-image: url(pic/exotic_bacc.jpg);
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        .exotic_title {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 13vh;
+            padding-bottom: 13vh;
+            background-color: darkred;
+            color: #eee;
+        }
+
+        .exotic_top,
+        .exotic_mid,
+        .exotic_btm {
+            height: 50vh;
+        }
+
+        @media (max-width:768px) {
+
+            .exotic_top,
+            .exotic_mid,
+            .exotic_btm {
+                height: 100vh;
+            }
+
+            .exotic_top_img,
+            .exotic_mid_img,
+            .exotic_btm_img {
+                height: 50vh;
+
+            }
+        }
+
+        .exotic_gap {
+            height: 9vh;
+
+        }
+
+        .exotic_top_img {
+            background-image: url(pic/exotic_top_img.JPG);
+            background-position: center;
+            background-size: cover;
+            height: 50vh;
+        }
+
+        .exotic_mid_img {
+            background-image: url(pic/exotic_mid_img.JPG);
+            background-position: center;
+            background-size: cover;
+            height: 50vh;
+        }
+
+        .exotic_btm_img {
+            background-image: url(pic/exotic_btm_img.JPG);
+            background-position: center;
+            background-size: cover;
+        }
+
+
+        .exotic_mid_text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 50vh;
+        }
+
+        .exotic_mid_text p {
+            padding-right: 5%;
+            padding-left: 5%;
+        }
+
+        .exotic_top_text,
+        .exotic_btm_text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 50vh;
+        }
+
+        .exotic_top_text p,
+        .exotic_btm_text p {
+            padding-right: 5%;
+            padding-left: 5%;
+        }
+
+        .challenge {
+            height: 100vh;
+            width: 100%;
+            background-color: darkkhaki;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-image: url(pic/challenge.jpg);
+            background-position: center;
+            background-size: cover;
+        }
+
+        .challenge_title,
+        .pollution_img1_textbox,
+        .pollution_img2_textbox {
+            max-width: 400px;
+            background-color: rgba(0, 0, 0, .5);
+            border-radius: 20px;
+            margin-left: 1%;
+            margin-right: 1%;
+            padding: 1%;
+
+        }
+
+        .challenge_title_text p {
+            color: #eee;
+
+        }
+
+
+        .back_to_top_mark {
+            position: fixed;
+            right: 10px;
+            bottom: 20px;
+            z-index: 200;
+
+
+        }
+
+        .gap {
+            height: 9vh;
+            background-color: rgb(42, 41, 41);
+        }
+
+        .footer {
+
+            background-color: black;
+        }
+
+        .container-fluid.footer h3 {
+            color: white;
+            text-align: center;
+            padding-top: 50px;
+            padding-bottom: 55px;
+            margin: 0;
+
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!-- 環境變化 -->
+    <div class="change container-fluid">
+        <div class="change_contant row">
+            <div class="change_left col-xl-6 col-lg-6 col-md-6  d-none d-md-block">
+            </div>
+            <div class="change_right col-xl-6 col-lg-6 col-md-6  col-sm-12 col-12">
+            </div>
+        </div>
+        <div class="container-fluid nav_bar">
+            <div class="nav_container container">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <a class="navbar-brand" href="#">
+                        <h1>
+                            <P>盛景之下</P>
+                        </h1>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#crisis">
+                                    <h2>
+                                        <P>高美危機</P>
+                                    </h2>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#overload">
+                                    <h2>
+                                        <P>觀光超載
+                                    </h2>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#pollution">
+                                    <h2>
+                                        <P>生態威脅
+                                    </h2>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#challenge">
+                                    <h2>
+                                        <P>環境挑戰
+                                    </h2>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="change_title">
+                    <div class="change_title_contant col-xl-6 col-md-6 col-lg-6 col-sm-12 col-12">
+                        <h1>
+                            <p>
+                                環境變化
+                            </p>
+                        </h1>
+
+                        <h2>
+                            <p>
+                                聚落變遷
+                            </p>
+                        </h2>
+                        <h3>
+                            <p>
+                                近年隨著高美濕地觀光法展蓬勃<br>
+                                附近居民為解決大量遊客停車問題，讓許多農田被剷除、樹林被砍伐。
+                            </p>
+                        </h3>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 危機事件 -->
+    <div class="container-fluid crisis" id="crisis">
+        <div class="row crisis_title">
+            <div class="col crisis_title_contant">
+                <h1>
+                    <p>
+                        危機事件
+                    </p>
+                </h1>
+                <span class="crisis_title_span">
+                    <h2>
+                        發展時間軸
+                    </h2>
+                </span>
+            </div>
+        </div>
+        <div class="row timeline">
+            <div class="col crisis_pic1 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+
+            </div>
+            <div class="col crisis_text1 col-xl-6 col-md-6 col-lg-6 col-sm-12 col-12">
+                <h3>
+                    <p>
+                        <span class="year">
+                            2006
+                        </span>
+                        互花米草入侵高美濕地
+                    </p>
+                </h3>
+            </div>
+
+        </div>
+        <div class="row timeline">
+            <div
+                class="col crisis_text2 col-xl-6 col-md-6 col-lg-6 col-sm-12 col-12 order-xl-1 order-lg-1 order-md-1 order-sm-2 order-2">
+                <h3>
+                    <p>
+                        <span class="year">
+                            2010
+                        </span>
+                        燃料油汙染事件
+                    </p>
+                </h3>
+            </div>
+
+            <div
+                class="col crisis_pic2 col-xl-6 col-md-6 col-lg-6 col-sm-12 col-12 order-xl-2 order-lg-2 order-md-2 order-sm-1 order-1">
+
+            </div>
+
+        </div>
+        <div class="row timeline">
+            <div class="col crisis_pic3 col-xl-6 col-md-6 col-lg-6 col-sm-12 col-12">
+            </div>
+
+            <div class="col crisis_text3 col-xl-6 col-md-6 col-lg-6 col-sm-12 col-12">
+                <h3>
+                    <p>
+                        <span class="year">
+                            2012
+                        </span>
+                        保護區設立後，民眾無視公告闖入
+                    </p>
+                </h3>
+            </div>
+
+        </div>
+        <div class="row timeline">
+            <div
+                class="col crisis_text4 col-xl-6 col-md-6 col-lg-6 col-sm-12 col-12  order-xl-1 order-lg-1 order-md-1 order-sm-2 order-2">
+                <h3>
+                    <p>
+                        <span class="year">
+                            2015
+                        </span>
+                        當地居民反對清水工業區設立
+                    </p>
+                </h3>
+            </div>
+
+            <div
+                class="col crisis_pic4 col-xl-6 col-md-6 col-lg-6 col-sm-12 col-12  order-xl-2 order-lg-2 order-md-2 order-sm-1 order-1">
+            </div>
+
+        </div>
+        <div class="row timeline">
+            <div class="col crisis_pic5 col-xl-6 col-md-6 col-lg-6 col-sm-12 col-12">
+            </div>
+
+            <div class="col crisis_text5 col-xl-6 col-md-6 col-lg-6 col-sm-12 col-12">
+                <h3>
+                    <p>
+                        <span class="year">
+                            2019
+                        </span>
+                        經東海大學檢測，木棧道起點水質大腸桿菌超標120倍
+                    </p>
+                </h3>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 觀光超載 -->
+    <div class="container-fluid overload" id="overload">
+        <div class="row overload_title">
+            <div class="col overload_title_contant">
+                <h1>
+                    <p>
+                        觀光超載
+                    </p>
+                </h1>
+            </div>
+
+        </div>
+        <div class="row overload_top">
+            <div class="col-xl-7 col-md-7 col-lg-7 col-sm-12 col-12 overload_top_img" data-aos='fade-right'
+                data-aos-offset='300' data-aos-easing='ease-in-sine'>
+            </div>
+            <div class="col-xl-3 col-md-3 col-lg-3 col-sm-12 col-12 overload_top_text">
+                <h2>
+                    <p>
+                        總量管制
+                    </p>
+                </h2>
+                <h3>
+                    <p>
+                        高美濕地每年遊客超過200萬人次，名列遊客人數最多的濕地。
+                        卻以收取停車費、攤商販售小吃為獲利模式，靠大量人潮來衝高經濟效益。
+                    </p>
+                </h3>
+                <h3>
+                    <p>
+                        超量的觀光人潮也影響著高美濕地的生態系統。
+                    </p>
+                </h3>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col overload_top_blank">
+
+            </div>
+
+        </div>
+        <div class="row overload_btm">
+            <div class="col overload_btm_gap">
+
+            </div>
+            <div
+                class="col-xl-3 col-md-3 col-lg-3 col-sm-12 col-12 order-xl-1 order-lg-1 order-md-1 order-sm-2 order-2 overload_btm_text">
+                <h2>
+                    <p>
+                        生態旅遊
+                    </p>
+                </h2>
+                <h3>
+                    <p>
+                        高美濕地為農委會公告的野生動物保護區及野生動物重要棲息環境，
+                        大量打著生態旅遊口號的遊客湧入早已嚴重超出當地生態承載量。
+                    </p>
+                </h3>
+            </div>
+            <div class="col-xl-7 col-md-7 col-lg-7 col-sm-12 col-12 order-xl-2 order-lg-2 order-md-2 order-sm-1 order-1 overload_btm_img"
+                data-aos='fade-left' data-aos-offset='300' data-aos-easing='ease-in-sine'>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- 環境汙染 -->
+    <div class="pollution" id="pollution">
+        <div class="pollution_title">
+            <h1>
+                <p>
+                    環境汙染
+                </p>
+            </h1>
+
+        </div>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide pollution_img1">
+                    <div class="pollution_img1_textbox">
+                        <h2>
+                            <p>
+                                番仔寮步道
+                            </p>
+                        </h2>
+                        <h3>
+                            <p>
+                                漁民下海作業有時需搬運一些漁網等重型機具，農業局因此設置該步道，讓漁民可以騎乘機車搬運器具。
+                            </p>
+                        </h3>
+                        <h3>
+                            <p>
+                                當初施作步道，地方人士就強烈建議希望就地取材，
+                                撿拾沙灘上的卵石舖設步道，降低人為破壞。
+                            </p>
+                        </h3>
+                        <h3>
+                            <p>
+                                結果施作完成，卻仍是「水泥步道」，不僅破壞生態，且與當地景觀顯得突兀。
+                            </p>
+                        </h3>
+                    </div>
+                </div>
+                <div class="swiper-slide pollution_img2">
+                    <div class="pollution_img2_textbox">
+                        <h2>
+                            <p>
+                                風力發電
+                            </p>
+                        </h2>
+                        <h3>
+                            <p>
+                                受到東北季風的影響，每年春、冬季所產出的電量約占全年度的七成。
+                            </p>
+                        </h3>
+                        <h3>
+                            <p>
+                                而用電量最高的夏季，4~9月卻是風力發電量最弱的季節。
+                            </p>
+                        </h3>
+                        <h3>
+                            <p>
+                                高美溼地設置18座風力發電機組故障率高，運轉率不到三成。
+                            </p>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+        <div class="pollution_blank_gap">
+
+        </div>
+        <div class="pollution_banner_top" data-aos="zoom-out">
+            <h2 class="show_box">
+                <p>
+                    燃油汙染
+                </p>
+            </h2>
+
+        </div>
+        <div class="pollution_blank_gap">
+
+        </div>
+        <div class="pollution_banner_mid" data-aos="zoom-out">
+            <h2 class="show_box">
+                <p>
+                    重金屬汙染
+                </p>
+            </h2>
+        </div>
+        <div class="pollution_blank_gap">
+
+        </div>
+        <div class="pollution_banner_btm" data-aos="zoom-out">
+            <h2 class="show_box">
+                <p>
+                    大腸桿菌
+                </p>
+            </h2>
+        </div>
+        <div class="pollution_blank_gap">
+
+        </div>
+    </div>
+
+    </div>
+    <!-- 外來物種 -->
+    <div class="exotic_bacc container-fluid">
+        <div class="row exotic_title">
+            <h1>
+                <p>
+                    外來物種
+                </p>
+            </h1>
+        </div>
+        <div class="container exotic">
+            <div class="row exotic_gap">
+
+            </div>
+
+            <div class="row exotic_top">
+                <div class="col-xl-6 col-md-6 col-lg-6 col-sm-12 col-12  exotic_top_img" data-aos='fade-right'
+                    data-aos-offset='300' data-aos-easing='ease-in-sine'>
+
+                </div>
+
+                <div class="col-xl-6 col-md-6 col-lg-6 col-sm-12 col-12 exotic_top_text" data-aos='fade-left'
+                    data-aos-offset='300' data-aos-easing='ease-in-sine'>
+                    <h2>
+                        <p>
+                            水筆仔
+                        </p>
+                    </h2>
+                    <h3>
+                        <p>
+                            水筆仔並非高美濕地的原生物種，而是人為刻意栽種下的結果，其迅速生長和茂密的特性正是濕地陸化的幫兇。
+                        </p>
+                    </h3>
+                </div>
+
+            </div>
+            <div class="row exotic_gap">
+
+            </div>
+            <div class="row exotic_mid">
+                <div class="col-xl-6 col-md-6 col-lg-6 col-sm-12 col-12 order-xl-1 order-lg-1 order-md-1 order-sm-2 order-2 exotic_mid_text"
+                    data-aos='fade-right' data-aos-offset='300' data-aos-easing='ease-in-sine'>
+                    <h2>
+                        <p>
+                            互花米草
+                        </p>
+                    </h2>
+                    <h3>
+                        <p>
+                            原生於北美洲沿海一帶，
+                            其有助於陸化的特性被許多國家引進做為陸化沿海的物種。
+                            中國每年花費上億元的人民幣經費進行研究與移除仍無成效，
+                            對海岸溼地生態形成幾近毀滅性的災害。
+                            台灣自2006年起陸續已於中北部出海口皆可看見互花米草的身影，
+                            目前幾乎北面沙灘溼地均已淪陷，高美溼地也是其中的受害名單之一。
+                        </p>
+                    </h3>
+                </div>
+                <div class="col-xl-6 col-md-6 col-lg-6 col-sm-12 col-12 order-xl-2 order-lg-2 order-md-2 order-sm-1 order-1 exotic_mid_img"
+                    data-aos='fade-left' data-aos-offset='300' data-aos-easing='ease-in-sine'>
+
+                </div>
+
+            </div>
+            <div class="row exotic_gap">
+
+            </div>
+            <div class="row exotic_btm">
+                <div class="col-xl-6 col-md-6 col-lg-6 col-sm-12 col-12 exotic_btm_img" data-aos='fade-right'
+                    data-aos-offset='300' data-aos-easing='ease-in-sine'>
+
+                </div>
+                <div class="col-xl-6 col-md-6 col-lg-6 col-sm-12 col-12 exotic_btm_text" data-aos='fade-left'
+                    data-aos-offset='300' data-aos-easing='ease-in-sine'>
+                    <h2>
+                        <p>
+                            埃及聖䴉
+                        </p>
+                    </h2>
+                    <h3>
+                        <p>
+                            原為非洲鳥類，目前族群已擴散至西部各縣市沿海濕地，
+                            已有明顯之繁殖群聚紀錄，高美濕地已成為該鳥種在中部地區最大棲息地。
+                        </p>
+                    </h3>
+                </div>
+
+            </div>
+            <div class="row exotic_gap">
+
+            </div>
+        </div>
+    </div>
+    <!-- 環境挑戰 -->
+    <div class="container-fluid challenge" id="challenge">
+        <div class="row challenge_title">
+            <div class="col challenge_title_text">
+                <h1>
+                    <p>
+                        環境挑戰
+                    </p>
+                </h1>
+                <h2>
+                    <p>
+                        棲地減少
+                    </p>
+                </h2>
+                <h3>
+                    <p>
+                        濕地陸化的轉變過程幾乎是難以逆轉的，而因陸化的過程而消失的物種更是不可逆的，
+                        任何缺乏環境意識的工程，人為引進物種或是過度人為干擾，都將對高美濕地造成無法挽回的傷害。
+                    </p>
+                </h3>
+            </div>
+        </div>
+
+    </div>
+    <div class="container-fluid back_to_top">
+        <div class="back_to_top_mark">
+            <a href="../index.html">
+                <img class="back_to_top_mark" src="pic/back_to_top_mark.png" alt="">
+            </a>
+        </div>
+    </div>
+    <div class="container-fluid footer">
+        <h3>
+            © 台中高美濕地 2019 僅用於課程學習用途，素材如侵權，請來信告知。
+        </h3>
+
+    </div>
+
+
+
+    <script src="jquery-3.4.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    <!-- Initialize Swiper -->
+
+
+    <script src="../dist/js/swiper.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+
+    </script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>

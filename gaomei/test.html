@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    
+
+
+    #some-blog.js .preloaded-content {
+        display: none;
+        padding: 1.5em;
+    }
+
+    #some-blog.js .preloaded-content p {
+        line-height: 1.4em;
+    }
+
+    #some-blog .blog-card.active .preloaded-content {
+        display: block;
+    }
+
+    .blog-card {
+        position: relative;
+        width: 200px;
+        height: 300px;
+        overflow: hidden;
+        border-radius: 5px;
+        margin: 24px auto;
+        cursor: pointer;
+        background: #efefef;
+    }
+
+    .blog-card.active {
+        position: absolute;
+        z-index: 100;
+        padding: 0;
+        margin: 0;
+        cursor: default;
+    }
+
+    .blog-card img {
+        width: auto;
+        height: 100%;
+        min-height: 300px;
+        transform: translateX(-25%);
+    }
+
+    .blog-card-background {
+        width: 100%;
+        height: 100%;
+        background-position: 50% 50%;
+        background-color: #333;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+    }
+
+    .blog-card h2,
+    .blog-card-background h2 {
+        color: white;
+        margin: 0;
+        padding: .25em;
+        position: absolute;
+        bottom: 0;
+        text-shadow: -2px 2px 3px black;
+    }
+
+    .blog-card .close {
+        position: absolute;
+        top: 1em;
+        right: 1em;
+        width: 32px;
+        height: 32px;
+        background: transparent url(https://media.wponlinesupport.com/wp-content/plugins/wpos-support-plus-responsive-ticket-system/asset/images/close_btn.png) no-repeat 50% 50%;
+        background-size: contain;
+        z-index: 100;
+        cursor: pointer;
+        opacity: .8;
+        overflow: hidden;
+        white-space: nowrap;
+        text-indent: 110%;
+    }
+
+    .blog-card.inactive .close {
+        display: none;
+    }
+
+    .blog-card .close:hover {
+        opacity: 1;
+    }
+</style>
+
+<body>
+    <div id="some-blog">
+
+        <!-- start post -->
+        <div class="blog-card">
+            <a href="/some-fake-content">
+                <img src="http://hdwarena.com/wp-content/uploads/2017/10/Free-Cool-Wallpaper-1366x768.jpg"></a>
+            <h2>Vestibulum ullamcorper tempus</h2>
+            <div class="preloaded-content">
+                <p>Proin faucibus sit amet nibh eget mollis. Nulla quis dignissim mi. Praesent dui ex, vehicula at
+                    quis velit commodo elementum id a dui.</p>
+                <p>Proin eu orci posuere, semper tortor vitae, varius est. Aliquam eu turpis eu tortor rutrum iaculis et
+                    id tincidunt purus. Ut eu tempor sem.</p>
+            </div>
+        </div>
+        <!-- end post -->
+
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+
+    <script>
+        $('document').ready(function () {
+            //.readay是指當網頁完成loading時才能進行function以確保不會出錯
+
+            $('#some-blog').addClass('js');
+            //some-blog增加一個class
+            $('.blog-card').addClass('inactive');
+            //blog-card增加一個class
+            $('.blog-card img').each(function () {
+                //each 函數為一次列出以下的值
+                var blogCard = $(this).closest('.blog-card');
+                blogCard.prepend('<div class="blog-card-background" style="background-image: url(' + $(
+                    this).attr('src') + ');"></div>');
+                    //在於blogCard中.prepend(插入)一個數值
+                blogCard.find('.blog-card-background').append(blogCard.find('h2'));
+                //blogCard中找到blogCard的class ".blog-card-background"  並在後面增加 
+                blogCard.prepend('<div class="close">Close</div>');
+                //當點開後新增一個DIV 名為close(關閉按鈕)
+                $(this).remove();
+                //刪除這一個所有
+            });
+
+            $('#some-blog').on('click', '.blog-card.inactive', function () {
+                //ON 為事件開關 (指定事件, 可選擇指定物件,一個函數)
+
+                // Should go to $(this).find('a').attr('href'); ... but we won't
+                // for the sake of the demo
+                //英文意思為我們可以在這增加一個 a 連結的屬性 但我們先不用 只是簡單的舉例
+                $(this).removeClass('inactive').addClass('active');
+                //this這裡為 .blog-card 移除class inactive 增加 active
+                
+                cardAnimate = new TimelineMax();
+                //宣告一個新的函數動畫為 cardAnimated
+
+                cardAnimate
+                    // These sets are in place so when reversed, all props are cleared
+                    .set($(this), {
+                        clearProps: "all"
+                    })
+                    //清除 .blog-card.inactive 所有屬性
+                    .set($(this).find('.blog-card-background'), {
+                        clearProps: "height"
+                    })
+                    //清除.blog-card.inactive 找到 .blog-card-background 的高度屬性
+                    .set($(this).find('.preloaded-content'), {
+                        clearProps: "all"
+                    })
+                    // 清除 .blog-card.inactive 找到 .preloaded-content'的所有屬性
+                    .set($(this).find('h2'), {
+                        clearProps: "all"
+                    })
+                    //清除 .blog-card.inactive  找到 h2 屬性
+                    .set($(this).find('.close'), {
+                        clearProps: "all"
+                    })
+                    //清除 .blog-card.inactive  找到的 close 所有的屬性
+
+                    
+
+
+
+
+                    // These sets just kick a few things into position so the tween is middle out
+                    // .set($(this).find('.blog-card-background'), {
+                    //     height: '400'
+                    // })
+                    // //給予.blog-card.inactive 找到 .blog-card-background 的高度屬性 400
+                    // .set($(this).find('.preloaded-content'), {
+                    //     autoAlpha: 0,
+                    //     y: 75
+                    // })
+                    .set($(this), {
+                        x: '-50%',
+                        left: '50%',
+                        top:  '24px',
+                        // y: '-50%'
+                    })
+                    .set($(this).find('h2'), {
+                        fontSize: '300%',
+                        y: -50,
+                        autoAlpha: 0
+                    })
+                    // .set($(this).find('.close'), {
+                    //     y: -100,
+                    //     autoAlpha: 0
+                    // })
+
+                    // the actual tweens
+                    .to($(this).find('.blog-card-background'), .125, {
+                        height: '450',
+                        top:  '-24px',
+                        ease: Power2.easeOut
+                    })
+                    .to($(this), .5, {
+                        width: '100%',
+                        height: '100%',
+                        ease: Expo.easeIn
+                    }, "-=.125")
+                    // .to($(this).find('.blog-card-background'), .5, {
+                    //     height: '400',
+                    //     y: 0,
+                    //     ease: Power2.easeOut
+                    // }, "-=.25")
+                    .to($(this).find('h2'), .35, {
+                        y: 0,
+                        autoAlpha: 1,
+                        ease: Power2.easeOut
+                    }, "-=.25")
+                    // .to($(this).find('.preloaded-content'), .75, {
+                    //     autoAlpha: 1,
+                    //     y: 0,
+                    //     ease: Power2.easeOut
+                    // }, "-=.5")
+                    // .to($(this).find('.close'), .75, {
+                    //     autoAlpha: 1,
+                    //     y: 0,
+                    //     ease: Power2.easeOut
+                    // });
+
+                $('#some-blog').on('click', '.blog-card.active .close', function () {
+                    cardAnimate.reverse().timeScale(2).eventCallback("onReverseComplete",
+                        function () {
+                            $('.blog-card.active').removeClass('active').addClass(
+                                'inactive');
+                        });
+                });
+
+            })
+
+
+
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            border-radius: border-box;
+            text-decoration: none;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        .banner {
+            width: 100%;
+            height: 100vh;
+            background-color: cornflowerblue;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .banner_top,
+        .banner_btm {
+            width: 100%;
+            height: 100vh;
+            position: absolute;
+
+        }
+
+        .banner_btm {
+            clip-path: polygon(0 100%, 100% 100%, 100% 75%, 0 80%);
+            transition-duration: 3s;
+
+
+        }
+
+        @media (max-width:768px) {
+            .banner_btm {
+                clip-path: polygon(0 100%, 100% 100%, 100% 50%, 0 40%);
+            }
+        }
+
+        .banner_top_img {
+            background-image: url("./71800.jpg");
+            width: 100%;
+            height: 100vh;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .banner_btm_img {
+            background-image: url("./885523.jpg");
+            width: 100%;
+            height: 100vh;
+            background-position: bottom;
+            background-size: cover;
+        }
+
+        .ani2 {
+            animation-delay: 3s;
+            animation: ani1 20s infinite;
+        }
+
+
+        .banner_top_title {
+            position: absolute;
+            right: 15%;
+            top: 15%;
+            width: 19%;
+            display: flex;
+            background-color: rgba(0, 0, 0, 0.6);
+            flex-direction: column;
+            padding: 1%;
+        }
+
+
+        .banner_btm_title {
+            position: absolute;
+            right: 15%;
+            bottom: 20%;
+            width: 19%;
+            background-color: rgba(0, 0, 0, 0.6);
+            display: flex;
+            flex-direction: column;
+            z-index: 5;
+            padding: 1%;
+        }
+
+        @media (max-width:768px) {
+            .banner_top_title {
+                position: absolute;
+                right: 15%;
+                top: 3%;
+            }
+
+            .banner_btm_title {
+                position: absolute;
+                right: 15%;
+                bottom: 3%;
+            }
+        }
+
+        .banner_top_titlebox,
+        .banner_btm_titlebox {
+            cursor: pointer;
+
+        }
+
+        h3 {
+            font-size: 36px;
+            font-family: 微軟正黑體;
+            font-weight: bold;
+            color: white;
+            margin: 0;
+            padding: 0;
+
+        }
+
+        h6 {
+            font-size: 17px;
+            font-family: 微軟正黑體;
+            font-weight: bold;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        @media (max-width:768px) {
+            .smell {
+                font-size: 12px;
+            }
+        }
+
+        .banner_btm:hover {
+            clip-path: polygon(0 100%, 100% 100%, 100% 50%, 0 30%);
+
+
+        }
+
+        @keyframes ani1 {
+            0% {
+                transform: scale(1);
+            }
+
+            25% {
+                transform: scale(1.1);
+            }
+
+            50% {
+                transform: scale(1.15);
+            }
+
+            75% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+<div class="banner">
+    <div class="banner_top">
+        <div class="banner_top_title">
+            <div class="banner_top_titlebox">
+                <a href="./gaomei/gaomei.html">
+                    <h3>高美濕地</h3>
+                    <h6>Gaomei Wetland</h6>
+                </a>
+            </div>
+        </div>
+        <div class="banner_top_img">
+
+        </div>
+    </div>
+    <div class="banner_btm">
+        <div class="banner_btm_title">
+            <div class="banner_btm_titlebox">
+                <a href="./Pollution/Pollution.html">
+                    <h3>盛景之下</h3>
+                    <h6 class="smell">Under the Wanderful Sights</h6>
+                </a>
+            </div>
+        </div>
+        <div class="banner_btm_img ani2 ">
+
+        </div>
+
+    </div>
+</div>
+
+
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/test.css">
+</head>
+<style>
+</style>
+
+<body>
+    
+    <div id="plant">
+        <!-- start post -->
+        <div class="plant-all">
+            <a href="">
+                <img src="avanter.jfif"></a>
+            <h2>8787</h2>
+            <div class="plant-text">
+                <p>8787</p>
+            </div>
+        </div>
+        <!-- end post -->
+
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+
+    <script>
+        $('document').ready(function () {
+            $('#plant').addClass('js');
+            $('.plant-all').addClass('inactive');
+            $('.plant-all img').each(function () {
+                var blogCard = $(this).closest('.plant-all');
+                blogCard.prepend('<div class="plant-all-background" style="background-image: url(' + $(
+                    this).attr('src') + ');"></div>');
+                blogCard.find('.plant-all-background').append(blogCard.find('h2'));
+                blogCard.prepend('<div class="close">Close</div>');
+                $(this).remove();
+            });
+
+            $('#plant').on('click', '.plant-all.inactive', function () {
+                $(this).removeClass('inactive').addClass('active');
+                cardAnimate = new TimelineMax();
+                cardAnimate
+                    .set($(this), {
+                        clearProps: "all"
+                    })
+                    .set($(this).find('h2'), {
+                        clearProps: "all"
+                    })
+                    .set($(this), {
+                        x: '-50%',
+                        left: '50%',
+                        top: '24px',
+                    })
+                    .set($(this).find('h2'), {
+                        fontSize: '300%',
+                        y: -50,
+                        autoAlpha: 0
+                    })
+                    .to($(this).find('.plant-all-background'), .125, {
+                        height: '450',
+                        top: '-24px',
+                        ease: Power2.easeOut
+                    })
+                    .to($(this), .5, {
+                        width: '100%',
+                        height: '100%',
+                        ease: Expo.easeIn
+                    }, "-=.125")
+
+                    .to($(this).find('h2'), .35, {
+                        y: 0,
+                        autoAlpha: 1,
+                        ease: Power2.easeOut
+                    }, "-=.25")
+
+                $('#plant').on('click', '.plant-all.active .close', function () {
+                    cardAnimate.reverse().timeScale(2).eventCallback("onReverseComplete",
+                        function () {
+                            $('.plant-all.active').removeClass('active').addClass(
+                                'inactive');
+                        });
+                });
+
+            })
+
+
+
+        });
+    </script>
+</body>
+
+</html>
