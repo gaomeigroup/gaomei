@@ -29,6 +29,7 @@
         body {
             position: relative;
             height: 100%;
+            width: 100%;
         }
 
         body {
@@ -77,7 +78,6 @@
             display: flex;
             flex-direction: row;
             margin: 0;
-            /* background-color: #b7a89d; */
             background-image: linear-gradient(to bottom, #c8bab1, #807872);
 
 
@@ -185,7 +185,7 @@
         }
 
         .crisis {
-            background-color: rgb(26,26,26);
+            background-color: rgb(26, 26, 26);
         }
 
         .crisis_pic1 {
@@ -449,7 +449,9 @@
         } */
 
         .pollution_banner_top {
-            background-image: url(pic/pollution_banner_top.jpg);
+            background-image: url("./pic/pollution_banner_top.jpg");
+            height: 100%;
+            width: 100%;
             background-attachment: fixed;
             background-position: center;
             background-repeat: no-repeat;
@@ -458,7 +460,9 @@
         }
 
         .pollution_banner_mid {
-            background-image: url(pic/pollution_banner_mid.png);
+            background-image: url("./pic/pollution_banner_mid.png");
+            height: 100%;
+            width: 100%;
             background-attachment: fixed;
             background-position: center;
             background-repeat: no-repeat;
@@ -468,7 +472,9 @@
         }
 
         .pollution_banner_btm {
-            background-image: url(pic/pollution_banner_btm.jpg);
+            background-image: url("./pic/pollution_banner_btm.jpg");
+            height: 100%;
+            width: 100%;
             background-attachment: fixed;
             background-position: center;
             background-repeat: no-repeat;
@@ -483,8 +489,15 @@
             height: 50vh;
             justify-content: center;
             align-items: center;
+        }
 
-
+        @media (max-width:768px) {
+            .pollution_banner_top,
+            .pollution_banner_mid,
+            .pollution_banner_btm,
+            .overload{
+                background-attachment:scroll;
+            }
         }
 
 
@@ -504,6 +517,13 @@
             background-position: center;
             background-size: cover;
             background-attachment: fixed;
+
+        }
+        @media (max-width:768px){
+            .exotic_bacc{
+                background-position:top left;
+                background-attachment:scroll;
+            }
         }
 
         .exotic_title {
@@ -544,21 +564,19 @@
         }
 
         .exotic_top_img {
-            background-image: url(pic/exotic_top_img.JPG);
+            background-image: url("./pic/exotic_top_img.jpg");
             background-position: center;
             background-size: cover;
-            height: 50vh;
         }
 
         .exotic_mid_img {
-            background-image: url(pic/exotic_mid_img.JPG);
+            background-image: url("./pic/exotic_mid_img.jpg");
             background-position: center;
             background-size: cover;
-            height: 50vh;
         }
 
         .exotic_btm_img {
-            background-image: url(pic/exotic_btm_img.JPG);
+            background-image: url("./pic/exotic_btm_img.jpg");
             background-position: center;
             background-size: cover;
         }
@@ -1023,13 +1041,11 @@
             </div>
 
             <div class="row exotic_top">
-                <div class="col-xl-6 col-md-6 col-lg-6 col-sm-12 col-12  exotic_top_img" data-aos='fade-right'
-                    data-aos-offset='300' data-aos-easing='ease-in-sine'>
+                <div class="col-xl-6 col-md-6 col-lg-6 col-sm-12 col-12  exotic_top_img">
 
                 </div>
 
-                <div class="col-xl-6 col-md-6 col-lg-6 col-sm-12 col-12 exotic_top_text" data-aos='fade-left'
-                    data-aos-offset='300' data-aos-easing='ease-in-sine'>
+                <div class="col-xl-6 col-md-6 col-lg-6 col-sm-12 col-12 exotic_top_text">
                     <h2>
                         <p>
                             水筆仔
@@ -1047,8 +1063,8 @@
 
             </div>
             <div class="row exotic_mid">
-                <div class="col-xl-6 col-md-6 col-lg-6 col-sm-12 col-12 order-xl-1 order-lg-1 order-md-1 order-sm-2 order-2 exotic_mid_text"
-                    data-aos='fade-right' data-aos-offset='300' data-aos-easing='ease-in-sine'>
+                <div
+                    class="col-xl-6 col-md-6 col-lg-6 col-sm-12 col-12 order-xl-1 order-lg-1 order-md-1 order-sm-2 order-2 exotic_mid_text">
                     <h2>
                         <p>
                             互花米草
@@ -1065,8 +1081,8 @@
                         </p>
                     </h3>
                 </div>
-                <div class="col-xl-6 col-md-6 col-lg-6 col-sm-12 col-12 order-xl-2 order-lg-2 order-md-2 order-sm-1 order-1 exotic_mid_img"
-                    data-aos='fade-left' data-aos-offset='300' data-aos-easing='ease-in-sine'>
+                <div
+                    class="col-xl-6 col-md-6 col-lg-6 col-sm-12 col-12 order-xl-2 order-lg-2 order-md-2 order-sm-1 order-1 exotic_mid_img">
 
                 </div>
 
@@ -1075,12 +1091,10 @@
 
             </div>
             <div class="row exotic_btm">
-                <div class="col-xl-6 col-md-6 col-lg-6 col-sm-12 col-12 exotic_btm_img" data-aos='fade-right'
-                    data-aos-offset='300' data-aos-easing='ease-in-sine'>
+                <div class="col-xl-6 col-md-6 col-lg-6 col-sm-12 col-12 exotic_btm_img">
 
                 </div>
-                <div class="col-xl-6 col-md-6 col-lg-6 col-sm-12 col-12 exotic_btm_text" data-aos='fade-left'
-                    data-aos-offset='300' data-aos-easing='ease-in-sine'>
+                <div class="col-xl-6 col-md-6 col-lg-6 col-sm-12 col-12 exotic_btm_text">
                     <h2>
                         <p>
                             埃及聖䴉

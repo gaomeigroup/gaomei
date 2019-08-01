@@ -34,6 +34,9 @@
 
         .banner_btm {
             clip-path: polygon(0 100%, 100% 100%, 100% 75%, 0 80%);
+            -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 75%, 0 80%);
+            -moz-clip-path: polygon(0 100%, 100% 100%, 100% 75%, 0 80%);
+                -o-clip-path: polygon(0 100%, 100% 100%, 100% 75%, 0 80%);
             transition-duration: 3s;
 
 
@@ -42,6 +45,9 @@
         @media (max-width:768px) {
             .banner_btm {
                 clip-path: polygon(0 100%, 100% 100%, 100% 50%, 0 40%);
+                -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 50%, 0 40%);
+                -moz-clip-path: polygon(0 100%, 100% 100%, 100% 50%, 0 40%);
+                -o-clip-path: polygon(0 100%, 100% 100%, 100% 50%, 0 40%);
             }
         }
 
@@ -76,6 +82,7 @@
             background-color: rgba(0, 0, 0, 0.6);
             flex-direction: column;
             padding: 1%;
+            z-index: 200;
         }
 
 
@@ -170,15 +177,16 @@
 
 </body>
 <div class="banner">
-    <div class="banner_top">
         <div class="banner_top_title">
-            <div class="banner_top_titlebox">
-                <a href="./gaomei/gaomei.html">
-                    <h3>高美濕地</h3>
-                    <h6>Gaomei Wetland</h6>
-                </a>
+                <div class="banner_top_titlebox">
+                    <a href="./gaomei/gaomei.html">
+                        <h3>高美濕地</h3>
+                        <h6>Gaomei Wetland</h6>
+                    </a>
+                </div>
             </div>
-        </div>
+    <div class="banner_top">
+        
         <div class="banner_top_img">
 
         </div>
