@@ -118,6 +118,19 @@
             padding: 0;
         }
 
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-tltle {
+            margin-right: 91px;
+            color: black;
+
+        }
+
+        .nav-container {
+            padding: 0 8%;
+        }
 
         .nav_bar {
             position: absolute;
@@ -492,11 +505,12 @@
         }
 
         @media (max-width:768px) {
+
             .pollution_banner_top,
             .pollution_banner_mid,
             .pollution_banner_btm,
-            .overload{
-                background-attachment:scroll;
+            .overload {
+                background-attachment: scroll;
             }
         }
 
@@ -519,10 +533,11 @@
             background-attachment: fixed;
 
         }
-        @media (max-width:768px){
-            .exotic_bacc{
-                background-position:top left;
-                background-attachment:scroll;
+
+        @media (max-width:768px) {
+            .exotic_bacc {
+                background-position: top left;
+                background-attachment: scroll;
             }
         }
 
@@ -682,48 +697,42 @@
         </div>
         <div class="container-fluid nav_bar">
             <div class="nav_container container">
-                <nav class="navbar navbar-expand-lg navbar-light">
-                    <a class="navbar-brand" href="#">
-                        <h1>
-                            <P>盛景之下</P>
-                        </h1>
-                    </a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse"
-                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ml-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#crisis">
-                                    <h2>
-                                        <P>高美危機</P>
-                                    </h2>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#overload">
-                                    <h2>
-                                        <P>觀光超載
-                                    </h2>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#pollution">
-                                    <h2>
-                                        <P>生態威脅
-                                    </h2>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#challenge">
-                                    <h2>
-                                        <P>環境挑戰
-                                    </h2>
-                                </a>
-                            </li>
-                        </ul>
+                <nav class="navbar navbar-expand-lg  navbar-dark fixed-top">
+                    <div class="container-fluid nav-container">
+                        <a class="navbar-brand" href="#">
+                            <h2 class="logo">盛景之下</h2>
+                        </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="#crisis">
+                                        <h3 class="nav-tltle  animated fadeInDown">高美危機</h3>
+                                    </a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="#overload">
+                                        <h3 class="nav-tltle  animated fadeInDown delay-1s">景觀破壞</h3>
+                                    </a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="#pollution">
+                                        <h3 class="nav-tltle animated fadeInDown delay-2s">生態威脅</h3>
+                                    </a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="#challenge">
+                                        <h3 class="animated nav-tltle fadeInDown delay-3s">環境挑戰</h3>
+                                    </a>
+                                </li>
+
+                            </ul>
+
+                        </div>
                     </div>
                 </nav>
                 <div class="change_title">
