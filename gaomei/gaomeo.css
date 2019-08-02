@@ -28,9 +28,7 @@ h3 {
 html {
     scroll-behavior: smooth;
 }
-*{
-    text-align: justify;
-}
+
 /* @media (min-width: 1600px) {
             .container.nav-container {
                 max-width: 1200px;
