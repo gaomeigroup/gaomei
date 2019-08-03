@@ -25,6 +25,9 @@ h3 {
     font-size: 16px;
     font-family: 微軟正黑體;
 }
+html {
+    scroll-behavior: smooth;
+}
 
 /* @media (min-width: 1600px) {
             .container.nav-container {
