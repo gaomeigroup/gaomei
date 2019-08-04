@@ -44,7 +44,7 @@ html {
 
 .nav-tltle {
     margin-right: 91px;
-    color: black;
+    color: white;
 
 }
 
@@ -69,9 +69,7 @@ html {
         } */
 /*用before撐滿整個畫面 並用posision 來定位 再用z-index拉到最前*/
 
-.nav-tltle {
-    color: #4D5B70;
-}
+
 
 .en-container {
     padding: 0;
